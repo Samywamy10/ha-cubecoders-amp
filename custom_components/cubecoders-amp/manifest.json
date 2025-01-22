@@ -1,0 +1,15 @@
+{
+  "domain": "cubecoders",
+  "name": "AMP",
+  "codeowners": ["@samywamy10"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/cubecoders",
+  "homekit": {},
+  "issue_tracker":  "https://github.com/greghesp/ha-bambulab/issues",
+  "iot_class": "local_polling",
+  "requirements": ["cc-ampapi==1.0.7", "dataclass-wizard==0.34.0"],
+  "ssdp": [],
+  "zeroconf": [],
+  "version": "1.0.0"
+}
