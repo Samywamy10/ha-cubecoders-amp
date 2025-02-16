@@ -6,10 +6,10 @@
   "dependencies": [],
   "documentation": "https://github.com/Samywamy10/ha-cubecoders-amp?tab=readme-ov-file",
   "homekit": {},
-  "issue_tracker":  "https://github.com/Samywamy10/ha-cubecoders-amp/issues",
   "iot_class": "local_polling",
+  "issue_tracker":  "https://github.com/Samywamy10/ha-cubecoders-amp/issues",
   "requirements": ["cc-ampapi==1.1.2", "dataclass-wizard==0.34.0"],
   "ssdp": [],
-  "zeroconf": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "zeroconf": []
 }
