@@ -41,6 +41,7 @@ class AmpExtendedInstance(AmpBaseInstance):
     """Represents an extended instance of AMP (Application Management Panel)."""
 
     active_users: int
+    players: str
     max_active_users: int
     cpu_usage_percentage: int
     memory_usage_mb: int
@@ -91,11 +92,16 @@ class AmpApiClient:
     async def async_get_data(self) -> dict[int, AmpExtendedInstance]:
         """Get data from the API."""
 
-        # return a dictionary keyed by the available_instance key and the value is the active_users
         all_instances = (await self.ads.get_instances())[0].available_instances
         data = {}
         for key, instance in enumerate(all_instances):
             instance_data = AMPInstance(instance)
+            players_raw = (await instance_data.get_user_list()).sorted
+            players = (
+                ", ".join(player.name for player in players_raw)
+                if players_raw
+                else None
+            )
             active_users = (
                 instance_data.metrics.active_users.get("raw_value", 0)
                 if instance_data.metrics.active_users
@@ -122,6 +128,7 @@ class AmpApiClient:
                 instance_name=instance.friendly_name,
                 instance_index=key,
                 active_users=active_users,
+                players=players,
                 max_active_users=max_active_users,
                 cpu_usage_percentage=cpu_usage_percentage,
                 memory_usage_mb=memory_usage_mb,
