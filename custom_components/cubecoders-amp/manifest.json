@@ -8,7 +8,7 @@
   "homekit": {},
   "issue_tracker":  "https://github.com/greghesp/ha-bambulab/issues",
   "iot_class": "local_polling",
-  "requirements": ["cc-ampapi==1.1.0", "dataclass-wizard==0.34.0"],
+  "requirements": ["cc-ampapi==1.1.2", "dataclass-wizard==0.34.0"],
   "ssdp": [],
   "zeroconf": [],
   "version": "1.0.0"
